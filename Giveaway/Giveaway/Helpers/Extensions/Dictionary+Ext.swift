@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension Dictionary {
+extension Dictionary {
     var jsonData: Data? {
         return try? JSONSerialization.data(withJSONObject: self, options: [.prettyPrinted])
     }
