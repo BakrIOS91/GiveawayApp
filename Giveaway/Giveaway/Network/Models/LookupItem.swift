@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct LookupItem: Identifiable {
+struct LookupItem: Identifiable, Equatable {
     let id: UUID = UUID()
     let name: String
     let value: String
-    
-    init(name: String, value: String) {
-        self.name = name
-        self.value = value
+
+    // Define equality based on `name` and `value`
+    static func == (lhs: LookupItem, rhs: LookupItem) -> Bool {
+        return lhs.name == rhs.name && lhs.value == rhs.value
     }
 }
