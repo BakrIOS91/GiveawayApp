@@ -37,3 +37,129 @@ enum APIError: Error, Equatable {
     /// Invalid Response.
     case invalidResponse
 }
+
+
+enum LookupType {
+    case platform
+    case type
+    case sortBy
+    
+    var lookupTitle: String {
+        switch self {
+        case .platform:
+            return "Platform"
+        case .type:
+            return "Type"
+        case .sortBy:
+            return "Sort Type"
+        }
+    }
+    
+    var lookupItems: [LookupItem] {
+        switch self {
+        case .platform:
+            return FilterPlatform.allCases.map({ LookupItem(name: $0.rawValue, value: $0.value) })
+        case .type:
+            return FilterType.allCases.map({ LookupItem(name: $0.rawValue, value: $0.value) })
+        case .sortBy:
+            return FilterSortBy.allCases.map({ LookupItem(name: $0.rawValue, value: $0.value) })
+
+        }
+    }
+}
+
+enum FilterPlatform: String, CaseIterable {
+    case PC
+    case Steam
+    case Epic = "Epic Games Store"
+    case Ubisoft
+    case GOG
+    case Itchio
+    case PS4
+    case PS5
+    case XboxOne = "Xbox One"
+    case XboxSeriseXS = "Xbox Series XS"
+    case Xbox360 = "Xbox 360"
+    case Switch
+    case Android
+    case iOS
+    case VR
+    case BattleNet
+    case Origin
+    case DRMFree = "DRM Free"
+    
+    var value: String {
+        switch self {
+        case .PC:
+            return "pc"
+        case .Steam:
+            return "steam"
+        case .Epic:
+            return "epic-games-store"
+        case .Ubisoft:
+            return "ubisoft"
+        case .GOG:
+            return "gog"
+        case .Itchio:
+            return "itchio"
+        case .PS4:
+            return "ps4"
+        case .PS5:
+            return "ps5"
+        case .XboxOne:
+            return "xbox-one"
+        case .XboxSeriseXS:
+            return "xbox-series-xs"
+        case .Xbox360:
+            return "xbox-360"
+        case .Switch:
+            return "switch"
+        case .Android:
+            return "android"
+        case .iOS:
+            return "ios"
+        case .VR:
+            return "vr"
+        case .BattleNet:
+            return "battlenet"
+        case .Origin:
+            return "origin"
+        case .DRMFree:
+            return "drm-free"
+        }
+    }
+}
+
+enum FilterType: String, CaseIterable {
+    case Game
+    case Loot
+    case Beta
+    
+    var value: String {
+        switch self {
+        case .Game:
+            return "game"
+        case .Loot:
+            return "loot"
+        case .Beta:
+            return "beta"
+        }
+    }
+}
+
+enum FilterSortBy: String, CaseIterable {
+    case Date
+    case Value
+    case Popularity
+    
+    var value: String {
+        switch self {
+        case .Date:
+            return "date"
+        case .Value:
+            return "value"
+        case .Popularity:
+            return "popularity"
+        }
+    }
+}

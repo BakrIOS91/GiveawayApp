@@ -11,7 +11,8 @@ import SwiftUI
 struct GiveawayApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            LookupFieldView(viewModel: .init(lookupType: .platform))
+                .padding()
         }
     }
 }
