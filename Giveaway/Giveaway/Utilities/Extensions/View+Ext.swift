@@ -20,4 +20,18 @@ extension View {
         )
         .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
+    
+    @ViewBuilder func `if`<Content: View>(
+        _ condition: Bool, transform: (Self) -> Content,
+        transformElse: ((Self) -> Content)? = nil) -> some View {
+           if condition {
+               transform(self)
+           } else {
+               if let transformElse = transformElse {
+                   transformElse(self)
+               } else {
+                   self
+               }
+           }
+       }
 }

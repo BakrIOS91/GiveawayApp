@@ -58,7 +58,7 @@ struct GiveAwayRequests {
         
         var baseURL: String { return AppTarget().kBaseURL }
         
-        var requestPath: String { return "filter" }
+        var requestPath: String { return "giveaway" }
         
         var requestMethod: Moya.Method {return .get}
         

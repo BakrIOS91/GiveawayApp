@@ -21,6 +21,10 @@ struct GiveAwayItem: Codable,Identifiable, Hashable {
     
     var isFavorite: Bool?
     
+    var isActive: Bool {
+        return status == "Active"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id, title, worth, thumbnail, image, description, instructions
         case openGiveawayURL = "open_giveaway_url"
