@@ -11,11 +11,14 @@ import Kingfisher
 struct GiveawayCell: View {
     var giveAwayItem: GiveAwayItem
     var didPressOnFavorit: () -> Void
+    var didPressOnItem: () -> Void
     
     init( giveAwayItem: GiveAwayItem,
+          didPressOnItem: @escaping () -> Void = {},
           didPressOnFavorit: @escaping () -> Void = {}
     ) {
         self.giveAwayItem = giveAwayItem
+        self.didPressOnItem = didPressOnItem
         self.didPressOnFavorit = didPressOnFavorit
     }
     
@@ -23,18 +26,33 @@ struct GiveawayCell: View {
         ZStack {
             itemImageView
             
-            VStack {
-                titleView
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    titleView
+                    
+                    Spacer()
+                    
+                    descriptionView
+                }
+                .onTapGesture {
+                    didPressOnItem()
+                }
                 
-                Spacer()
-                
-                descriptionView
+                Button {
+                    didPressOnFavorit()
+                } label: {
+                    Image(systemName: (giveAwayItem.isFavorite ?? false) ? "heart.fill" : "heart")
+                        .resizable()
+                        .foregroundStyle((giveAwayItem.isFavorite ?? false) ? .red : .white)
+                }
+                .frame(width: 25, height: 25)
             }
             .padding()
             
         }
         .padding(.horizontal, 20)
         .frame(height: 300)
+        
     }
     
     fileprivate var itemImageView: some View {
@@ -55,7 +73,7 @@ struct GiveawayCell: View {
     }
     
     fileprivate var titleView: some View {
-        HStack(alignment: .top) {
+        HStack {
             VStack(alignment: .leading) {
                 Text(giveAwayItem.title ?? "")
                     .font(.title2)
@@ -65,17 +83,8 @@ struct GiveawayCell: View {
                     .foregroundStyle(.white.opacity(0.6))
                     .font(.caption)
             }
-            
+            .padding(.trailing, 20)
             Spacer()
-            
-            Button {
-                didPressOnFavorit()
-            } label: {
-                Image(systemName: "heart")
-                    .resizable()
-            }
-            .frame(width: 25, height: 25)
-            
         }
         .foregroundStyle(.white)
     }

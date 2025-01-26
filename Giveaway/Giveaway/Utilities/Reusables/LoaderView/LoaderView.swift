@@ -10,9 +10,15 @@ import LoaderUI
 
 struct LoaderView: View {
     var body: some View {
-        BallPulseSync()
-            .frame(width: 200, height: 60, alignment: .center)
-            .foregroundColor(.blue)
+        VStack {
+            Spacer()
+            
+            BallPulseSync()
+                .frame(width: 200, height: 60, alignment: .center)
+                .foregroundColor(.blue)
+            
+            Spacer()
+        }
     }
 }
 

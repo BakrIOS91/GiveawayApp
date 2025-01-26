@@ -21,6 +21,8 @@ struct ErrorView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            Spacer()
+            
             apiError.errorImage
                 .resizable()
                 .frame(width: 200, height: 200)
@@ -48,6 +50,8 @@ struct ErrorView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
+            
+            Spacer()
         }
         .padding()
         .multilineTextAlignment(.center)

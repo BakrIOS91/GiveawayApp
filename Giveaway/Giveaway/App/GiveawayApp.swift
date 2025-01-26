@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct GiveawayApp: App {
+    
+    init() {
+        NetworkMonitor.shared.startMonitoring()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            LookupFieldView(viewModel: .init(lookupType: .platform))
-                .padding()
+            HomeView(viewModel: .init())
         }
     }
 }

@@ -75,4 +75,7 @@ final class Preferences {
     
     /// A subject that emits the key path of the changed preference whenever a change occurs.
     var preferencesChangedSubject = PassthroughSubject<AnyKeyPath, Never>()
+    
+    @UserDefault(PrefrancesKeys.kAPPFavoriteGiveAways.rawValue)
+    var favoriteGiveAways: [GiveAwayItem] = []
 }

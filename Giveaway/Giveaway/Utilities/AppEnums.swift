@@ -51,7 +51,7 @@ enum APIError: Error, Equatable {
             return StringConstants.error_DataConversionFailed_Title.text
         case .stringConversionFailed:
             return StringConstants.error_StringConversionFailed_Title.text
-        case .httpError(let statusCode):
+        case .httpError:
             return StringConstants.error_HTTPError_Title.text
         case .noNetwork:
             return StringConstants.error_NoNetwork_Title.text
@@ -114,7 +114,7 @@ enum APIError: Error, Equatable {
             return false
         case .stringConversionFailed:
             return false
-        case .httpError(let statusCode):
+        case .httpError:
             return true
         case .noNetwork:
             return true
@@ -126,6 +126,11 @@ enum APIError: Error, Equatable {
             return false
         }
     }
+}
+
+
+enum PrefrancesKeys: String {
+    case kAPPFavoriteGiveAways
 }
 
 
