@@ -5,6 +5,8 @@
 //  Created by Bakr mohamed on 25/01/2025.
 //
 
+import SwiftUI
+
 enum AppEnvironment {
     case development
     case testing
@@ -36,6 +38,99 @@ enum APIError: Error, Equatable {
     case noNetwork
     /// Invalid Response.
     case invalidResponse
+    /// No Data
+    case noData
+    /// No Search Data Match
+    case searchError
+    
+    var errorTitle: String {
+        switch self {
+        case .invalidURL:
+            return StringConstants.error_InvalidURL_Title.text
+        case .dataConversionFailed:
+            return StringConstants.error_DataConversionFailed_Title.text
+        case .stringConversionFailed:
+            return StringConstants.error_StringConversionFailed_Title.text
+        case .httpError:
+            return StringConstants.error_HTTPError_Title.text
+        case .noNetwork:
+            return StringConstants.error_NoNetwork_Title.text
+        case .invalidResponse:
+            return StringConstants.error_InvalidResponse_Title.text
+        case .noData:
+            return StringConstants.error_NoData_Title.text
+        case .searchError:
+            return StringConstants.error_SearchError_Title.text
+        }
+    }
+    
+    var errorDescription: String {
+        switch self {
+        case .invalidURL:
+            return StringConstants.error_InvalidURL_Description.text
+        case .dataConversionFailed:
+            return StringConstants.error_DataConversionFailed_Description.text
+        case .stringConversionFailed:
+            return StringConstants.error_StringConversionFailed_Description.text
+        case .httpError(let statusCode):
+            return StringConstants.error_HTTPError_Description(statusCode)
+        case .noNetwork:
+            return StringConstants.error_NoNetwork_Description.text
+        case .invalidResponse:
+            return StringConstants.error_InvalidResponse_Description.text
+        case .noData:
+            return StringConstants.error_NoData_Description.text
+        case .searchError:
+            return StringConstants.error_SearchError_Description.text
+        }
+    }
+    
+    var errorImage: Image {
+        switch self {
+        case .invalidURL:
+            return Image(.errorUnExpected)
+        case .dataConversionFailed:
+            return Image(.errorUnExpected)
+        case .stringConversionFailed:
+            return Image(.errorUnExpected)
+        case .httpError:
+            return Image(.errorUnExpected)
+        case .noNetwork:
+            return Image(.errorNoNetwork)
+        case .invalidResponse:
+            return Image(.errorServerError)
+        case .noData:
+            return Image(.errorNoDataa)
+        case .searchError:
+            return Image(.errorSearch)
+        }
+    }
+    
+    var isReloadable: Bool {
+        switch self {
+        case .invalidURL:
+            return true
+        case .dataConversionFailed:
+            return false
+        case .stringConversionFailed:
+            return false
+        case .httpError:
+            return true
+        case .noNetwork:
+            return true
+        case .invalidResponse:
+            return false
+        case .noData:
+            return false
+        case .searchError:
+            return false
+        }
+    }
+}
+
+
+enum PrefrancesKeys: String {
+    case kAPPFavoriteGiveAways
 }
 
 
@@ -127,6 +222,10 @@ enum FilterPlatform: String, CaseIterable {
         case .DRMFree:
             return "drm-free"
         }
+    }
+    
+    static var homeFilters: [Self] {
+        return [.PC,.Steam,.iOS,.Android]
     }
 }
 

@@ -9,15 +9,18 @@ import SwiftUI
 struct SearchBarView: View {
     @State private var searchText: String = ""
     var isFilterShown: Bool
+    var placeholder: String
     var onChangeSearchText: (String) -> Void
     var didPressOnFilterButton: (() -> Void)?
     
     init(
         isFilterShown: Bool,
+        placeholder: String = StringConstants.common_Search.text,
         onChangeSearchText: @escaping (String) -> Void,
         didPressOnFilterButton: (() -> Void)? = nil
     ) {
         self.isFilterShown = isFilterShown
+        self.placeholder = placeholder
         self.onChangeSearchText = onChangeSearchText
         self.didPressOnFilterButton = didPressOnFilterButton
     }
@@ -26,12 +29,8 @@ struct SearchBarView: View {
         HStack {
             // Search Bar
             HStack {
-                // Search Icon
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.gray)
-                    .padding(.leading, 8)
-
-                TextField("Search...", text: $searchText)
+                
+                TextField(placeholder, text: $searchText)
                     .padding(.vertical, 10)
                     .padding(.trailing, 8)
                     .submitLabel(.search)
@@ -39,6 +38,7 @@ struct SearchBarView: View {
                     .onSubmit {
                         onChangeSearchText(searchText)
                     }
+                    .padding(.leading)
 
                 if !searchText.isEmpty {
                     Button(action: {
@@ -52,7 +52,7 @@ struct SearchBarView: View {
             }
             .background(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.gray, lineWidth: 1)
+                    .fill(.gray.opacity(0.25))
             )
 
             if isFilterShown {
@@ -79,9 +79,14 @@ struct SearchBarView: View {
 }
 
 #Preview {
-    SearchBarView(isFilterShown: true) { searchText in
-        print("Search text changed: \(searchText)")
-    } didPressOnFilterButton: {
-        print("Filter button pressed")
-    }
+    SearchBarView(
+        isFilterShown: true,
+        placeholder: "Search Game by name", // Localized string placeholder
+        onChangeSearchText: { searchText in
+            print("Search text changed: \(searchText)")
+        },
+        didPressOnFilterButton: {
+            print("Filter button pressed")
+        }
+    )
 }

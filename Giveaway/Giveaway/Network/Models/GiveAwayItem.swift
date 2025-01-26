@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - GiveAwayItem
-struct GiveAwayItem: Codable {
-    let id: Int?
+struct GiveAwayItem: Codable,Identifiable, Hashable {
+    let id: Int
     let title, worth: String?
     let thumbnail, image: String?
     let description, instructions: String?
@@ -18,6 +18,8 @@ struct GiveAwayItem: Codable {
     let users: Int?
     let status: String?
     let gamerpowerURL, openGiveaway: String?
+    
+    var isFavorite: Bool?
     
     enum CodingKeys: String, CodingKey {
         case id, title, worth, thumbnail, image, description, instructions
@@ -28,6 +30,7 @@ struct GiveAwayItem: Codable {
         case users, status
         case gamerpowerURL = "gamerpower_url"
         case openGiveaway = "open_giveaway"
+        case isFavorite
     }
     
     static func mock(_ id: Int) -> GiveAwayItem {
