@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "👋" : {
+
+    },
+    "all" : {
+
+    },
     "common_Deselect_All" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,6 +25,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "common_Search" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search…"
           }
         }
       }
@@ -45,7 +62,40 @@
         }
       }
     },
-    "Search..." : {
+    "home_Greeting" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, %@"
+          }
+        }
+      }
+    },
+    "home_Search_Placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Game by name"
+          }
+        }
+      }
+    },
+    "home_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Explore Games Giveaways"
+          }
+        }
+      }
+    },
+    "More" : {
 
     }
   },

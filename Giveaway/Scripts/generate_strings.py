@@ -32,13 +32,18 @@ with open(OUTPUT_FILE, "w") as file:
         if not localizations:
             continue
 
+        # Add comment with locale titles
+        file.write(f"    // Localizations for '{key}':\n")
+        for locale, loc_value in localizations.items():
+            file.write(f"    // - {locale}: {loc_value.get('stringUnit', {}).get('value', '')}\n")
+
         # Check if the string contains parameters (e.g., "%@")
         has_parameters = any("%@" in loc.get("stringUnit", {}).get("value", "") for loc in localizations.values())
 
         if has_parameters:
             # Generate a function for parameterized strings
             file.write(f"    static func {key}(_ args: CVarArg...) -> String {{\n")
-            file.write(f"        return String(format: String(LocalizedStringKey(\"{key}\")), arguments: args)\n")
+            file.write(f"        return String(format: NSLocalizedString(\"{key}\", comment: \"\"), arguments: args)\n")
             file.write("    }\n")
         else:
             # Generate a constant for non-parameterized strings

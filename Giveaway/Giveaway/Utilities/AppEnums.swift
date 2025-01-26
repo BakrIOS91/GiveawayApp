@@ -128,6 +128,10 @@ enum FilterPlatform: String, CaseIterable {
             return "drm-free"
         }
     }
+    
+    static var homeFilters: [Self] {
+        return [.PC,.Steam,.iOS,.Android]
+    }
 }
 
 enum FilterType: String, CaseIterable {
