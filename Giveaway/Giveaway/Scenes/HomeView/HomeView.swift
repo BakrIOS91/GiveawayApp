@@ -60,7 +60,7 @@ struct HomeView: View {
                 Button{
                     
                 } label: {
-                    Text("all")
+                    Text(StringConstants.home_Filter_All)
                         .fontWeight(.medium)
                 }
                 .buttonStyle(.plain)
@@ -79,7 +79,7 @@ struct HomeView: View {
                 Button{
                     
                 } label: {
-                    Text("More")
+                    Text(StringConstants.home_Filter_More)
                         .underline()
                 }
             }

@@ -1,6 +1,7 @@
 import json
 import os
 import sys
+import re
 
 # Paths
 STRING_CATALOG = os.path.join(os.getenv("SRCROOT"), "Giveaway", "Resources", "Localizable.xcstrings")
@@ -18,6 +19,11 @@ if not os.path.isfile(STRING_CATALOG):
 # Load the String Catalog
 with open(STRING_CATALOG, "r") as file:
     catalog = json.load(file)
+
+# Function to check if a string contains format specifiers
+def contains_format_specifiers(string):
+    # Match common format specifiers: %@, %d, %f, etc.
+    return bool(re.search(r"%[\d\.]*[sd@f]", string))
 
 # Generate the Swift file
 with open(OUTPUT_FILE, "w") as file:
@@ -37,11 +43,14 @@ with open(OUTPUT_FILE, "w") as file:
         for locale, loc_value in localizations.items():
             file.write(f"    // - {locale}: {loc_value.get('stringUnit', {}).get('value', '')}\n")
 
-        # Check if the string contains parameters (e.g., "%@")
-        has_parameters = any("%@" in loc.get("stringUnit", {}).get("value", "") for loc in localizations.values())
+        # Check if the string contains format specifiers
+        has_format_specifiers = any(
+            contains_format_specifiers(loc.get("stringUnit", {}).get("value", ""))
+            for loc in localizations.values()
+        )
 
-        if has_parameters:
-            # Generate a function for parameterized strings
+        if has_format_specifiers:
+            # Generate a function for strings with format specifiers
             file.write(f"    static func {key}(_ args: CVarArg...) -> String {{\n")
             file.write(f"        return String(format: NSLocalizedString(\"{key}\", comment: \"\"), arguments: args)\n")
             file.write("    }\n")

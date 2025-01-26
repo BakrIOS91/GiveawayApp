@@ -4,9 +4,6 @@
     "👋" : {
 
     },
-    "all" : {
-
-    },
     "common_Deselect_All" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -25,6 +22,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "common_Retry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
           }
         }
       }
@@ -62,6 +70,204 @@
         }
       }
     },
+    "error_DataConversionFailed_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to convert data to the expected format."
+          }
+        }
+      }
+    },
+    "error_DataConversionFailed_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Conversion Failed"
+          }
+        }
+      }
+    },
+    "error_HTTPError_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An HTTP error occurred with status code: %d."
+          }
+        }
+      }
+    },
+    "error_HTTPError_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HTTP Error"
+          }
+        }
+      }
+    },
+    "error_InvalidResponse_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The server returned an invalid response."
+          }
+        }
+      }
+    },
+    "error_InvalidResponse_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid Response"
+          }
+        }
+      }
+    },
+    "error_InvalidURL_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The provided URL is invalid."
+          }
+        }
+      }
+    },
+    "error_InvalidURL_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid URL"
+          }
+        }
+      }
+    },
+    "error_NoData_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No data was returned from the server."
+          }
+        }
+      }
+    },
+    "error_NoData_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Data"
+          }
+        }
+      }
+    },
+    "error_NoNetwork_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No network connection is available."
+          }
+        }
+      }
+    },
+    "error_NoNetwork_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Network"
+          }
+        }
+      }
+    },
+    "error_SearchError_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while performing the search."
+          }
+        }
+      }
+    },
+    "error_SearchError_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Error"
+          }
+        }
+      }
+    },
+    "error_StringConversionFailed_Description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to convert data to a string."
+          }
+        }
+      }
+    },
+    "error_StringConversionFailed_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "String Conversion Failed"
+          }
+        }
+      }
+    },
+    "home_Filter_All" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "all"
+          }
+        }
+      }
+    },
+    "home_Filter_More" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More"
+          }
+        }
+      }
+    },
     "home_Greeting" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -94,9 +300,6 @@
           }
         }
       }
-    },
-    "More" : {
-
     }
   },
   "version" : "1.0"
