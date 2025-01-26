@@ -127,4 +127,14 @@ final class HomeViewModelTests: XCTestCase {
         // Then
         XCTAssertTrue(viewModel.state.filteredGiveawayItems.isEmpty, "Filtered items should be cleared when search text is empty.")
     }
+    
+    func testDidPressOnGiveawayItem_InitlizeDetaisViewModel_DetailsViewModelNotNil() {
+        // Given
+        let item = GiveAwayItem.mock(1)
+        // When
+        viewModel.trigger(.didSelectGiveawayItem(item))
+
+        // Then
+        XCTAssertNotNil(viewModel.state.detailsViewModel.isNil, "Detaild View Model Shouldn't be Nil")
+    }
 }

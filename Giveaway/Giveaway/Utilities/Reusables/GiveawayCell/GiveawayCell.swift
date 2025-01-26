@@ -44,8 +44,9 @@ struct GiveawayCell: View {
                     Image(systemName: (giveAwayItem.isFavorite ?? false) ? "heart.fill" : "heart")
                         .resizable()
                         .foregroundStyle((giveAwayItem.isFavorite ?? false) ? .red : .white)
+                        .frame(width: 25, height: 25)
                 }
-                .frame(width: 25, height: 25)
+                
             }
             .padding()
             

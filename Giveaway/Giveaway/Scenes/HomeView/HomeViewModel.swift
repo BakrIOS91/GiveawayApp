@@ -26,6 +26,7 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
         var quickFilterString = ""
         
         // viewModels
+        var detailsViewModel: DetailedViewModel?
     }
     enum Page {
         case first
@@ -114,7 +115,7 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
     }
     
     fileprivate func handelDidSelectGiveawayItem(_ item: GiveAwayItem)  {
-        // should navigate to details View
+        state.detailsViewModel = createDetailViewModel(item.id, item.isFavorite ?? false)
     }
     
     fileprivate func handelDidFavoriteGiveawayItem(_ item: GiveAwayItem)  {
@@ -153,6 +154,18 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
             state.filteredGiveawayItems.removeAll()
             state.apiError = nil
         }
+    }
+    
+    fileprivate func createDetailViewModel(_ itemId: Int, _ isFavorite: Bool) -> DetailedViewModel {
+        let detailViewModel = DetailedViewModel(itemId, isFavorite: isFavorite)
+        detailViewModel.didPressOnBackButtonSubject
+            .sink { [weak self] in
+                guard let self else { return }
+                state.detailsViewModel = nil
+            }
+            .store(in: &cancelables)
+        
+        return detailViewModel
     }
 
 }

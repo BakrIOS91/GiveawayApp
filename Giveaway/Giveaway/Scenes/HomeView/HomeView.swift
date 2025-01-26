@@ -11,29 +11,36 @@ struct HomeView: View {
     @Bindable var viewModel: HomeViewModel
     
     var body: some View {
-        VStack(spacing: 10) {
-            headerView
-            
-            SearchBarView(
-                isFilterShown: true,
-                placeholder: StringConstants.home_Search_Placeholder.text) { searchText in
-                    viewModel.trigger(.handelSearchItems(searchText))
-                } didPressOnFilterButton: {
-                    
-                }
+        NavigationStack {
+            VStack(spacing: 10) {
+                headerView
+                
+                SearchBarView(
+                    isFilterShown: true,
+                    placeholder: StringConstants.home_Search_Placeholder.text) { searchText in
+                        viewModel.trigger(.handelSearchItems(searchText))
+                    } didPressOnFilterButton: {
+                        
+                    }
 
-            quickFilter
-            
-            giveawaysView()
-        }
-        .task {
-            viewModel.trigger(
-                .loadGiveAways(
-                    viewModel.state.giveAwayRequestModel,
-                    atPage: .first
+                quickFilter
+                
+                giveawaysView()
+            }
+            .task {
+                viewModel.trigger(
+                    .loadGiveAways(
+                        viewModel.state.giveAwayRequestModel,
+                        atPage: .first
+                    )
                 )
-            )
+            }
+            .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(item: $viewModel.state.detailsViewModel) {
+                DetailedView(viewModel: $0)
+            }
         }
+        
     }
     
     fileprivate var headerView: some View {

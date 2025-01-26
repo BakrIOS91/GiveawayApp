@@ -22,6 +22,15 @@ enum StringConstants {
     // Localizations for 'common_Select_All':
     // - en: Select all
     static let common_Select_All = LocalizedStringKey("common_Select_All")
+    // Localizations for 'details_Description':
+    // - en: Description
+    static let details_Description = LocalizedStringKey("details_Description")
+    // Localizations for 'details_End_Date':
+    // - en: Give Away End Date
+    static let details_End_Date = LocalizedStringKey("details_End_Date")
+    // Localizations for 'details_Platform':
+    // - en: Platforms
+    static let details_Platform = LocalizedStringKey("details_Platform")
     // Localizations for 'error_DataConversionFailed_Description':
     // - en: Failed to convert data to the expected format.
     static let error_DataConversionFailed_Description = LocalizedStringKey("error_DataConversionFailed_Description")
