@@ -4,6 +4,9 @@
 import SwiftUI
 
 enum StringConstants {
+    // Localizations for 'categories':
+    // - en: Categories
+    static let categories = LocalizedStringKey("categories")
     // Localizations for 'common_Deselect_All':
     // - en: Deselect all
     static let common_Deselect_All = LocalizedStringKey("common_Deselect_All")

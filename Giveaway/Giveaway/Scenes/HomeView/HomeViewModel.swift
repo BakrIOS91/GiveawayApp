@@ -27,6 +27,7 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
         
         // viewModels
         var detailsViewModel: DetailedViewModel?
+        var moreViewModel: MoreViewModel?
     }
     enum Page {
         case first
@@ -40,6 +41,7 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
         case didFavoriteGiveawayItem(GiveAwayItem)
         case handelSearchItems(String)
         case handelQuickFilter(String)
+        case didPressOnMoreView
     }
     
     init() {
@@ -61,13 +63,17 @@ final class HomeViewModel: BaseViewModel<HomeViewModel.State, HomeViewModel.Acti
         case let .handelQuickFilter(platform):
             state.quickFilterString = platform
             trigger(.loadGiveAways(.init(platform: platform), atPage: .first))
+        case .didPressOnMoreView:
+            state.moreViewModel = .init()
         }
     }
     
     fileprivate func loadGiveawaysItems(_ requestModel: GiveAwayRequestModel? = nil, _ atPage: Page) {
         if atPage == .first{
             state.isLoading = true
-            if requestModel.isNil { state.quickFilterString = "" }
+            if requestModel.isNil {
+                state.quickFilterString = ""
+            }
             Task {
                 return await trigger(
                     .giveawayesResponse(

@@ -7,6 +7,17 @@
     "👋" : {
 
     },
+    "categories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categories"
+          }
+        }
+      }
+    },
     "common_Deselect_All" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -336,6 +347,9 @@
           }
         }
       }
+    },
+    "Page %@" : {
+
     }
   },
   "version" : "1.0"

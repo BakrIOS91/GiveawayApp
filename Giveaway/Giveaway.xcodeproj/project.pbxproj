@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C96F8F22D47065400F2E01B /* Giveaway.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = Giveaway.xctestplan; path = ../../../../../../Downloads/Giveaway.xctestplan; sourceTree = "<group>"; };
 		3CA1CE5E2D44F22B00E48EB7 /* Giveaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giveaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA337992D4588C80030F21F /* GiveawayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveawayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA337A92D4589410030F21F /* GiveawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveawayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +100,7 @@
 		3CA1CE552D44F22B00E48EB7 = {
 			isa = PBXGroup;
 			children = (
+				3C96F8F22D47065400F2E01B /* Giveaway.xctestplan */,
 				3CA1CE602D44F22B00E48EB7 /* Giveaway */,
 				3CA3379A2D4588C80030F21F /* GiveawayTests */,
 				3CA337AA2D4589410030F21F /* GiveawayUITests */,
