@@ -32,6 +32,7 @@ A SwiftUI Application With Modern MVVM
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-27 at 02 43 41](https://github.com/user-attachments/assets/c4be4fc6-8353-45ec-b8e1-76eb602d6ca8)
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-27 at 02 43 44](https://github.com/user-attachments/assets/71dd541e-73bd-421f-986c-88a0432416aa)
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-27 at 02 43 56](https://github.com/user-attachments/assets/2bee77d0-91ea-4ece-a3c4-1ac8fdbf4ed2)
+![simulator_screenshot_34286A79-C136-4B47-971D-714531105C91](https://github.com/user-attachments/assets/defbb11f-7277-4f02-9a54-13709d10fb78)
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-27 at 02 44 02](https://github.com/user-attachments/assets/f28cce42-65f2-4378-b034-1fee4976ed2d)
 
 
