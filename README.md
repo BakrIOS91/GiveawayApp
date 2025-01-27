@@ -26,7 +26,7 @@ A SwiftUI Application With Modern MVVM
  - LoaderUI: https://github.com/ninjaprox/LoaderUI
 
 ## API
- - [https://newsapi.org/](https://www.gamerpower.com/api-read)
+ - https://www.gamerpower.com/api-read
 
 ## Screenshots
 ![Simulator Screenshot - iPhone 16 Pro - 2025-01-27 at 02 43 41](https://github.com/user-attachments/assets/c4be4fc6-8353-45ec-b8e1-76eb602d6ca8)
