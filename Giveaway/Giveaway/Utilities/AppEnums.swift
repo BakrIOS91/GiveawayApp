@@ -227,6 +227,10 @@ enum FilterPlatform: String, CaseIterable {
     static var homeFilters: [Self] {
         return [.PC,.Steam,.iOS,.Android]
     }
+    
+    static var availableInMore: [Self] {
+            return FilterPlatform.allCases.filter { !homeFilters.contains($0) }
+        }
 }
 
 enum FilterType: String, CaseIterable {

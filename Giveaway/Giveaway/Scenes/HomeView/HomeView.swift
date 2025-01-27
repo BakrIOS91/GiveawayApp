@@ -16,11 +16,9 @@ struct HomeView: View {
                 headerView
                 
                 SearchBarView(
-                    isFilterShown: true,
+                    isFilterShown: false,
                     placeholder: StringConstants.home_Search_Placeholder.text) { searchText in
                         viewModel.trigger(.handelSearchItems(searchText))
-                    } didPressOnFilterButton: {
-                        
                     }
 
                 quickFilter
@@ -38,6 +36,9 @@ struct HomeView: View {
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(item: $viewModel.state.detailsViewModel) {
                 DetailedView(viewModel: $0)
+            }
+            .navigationDestination(item: $viewModel.state.moreViewModel) {
+                MoreView(viewModel: $0)
             }
         }
         
@@ -103,7 +104,7 @@ struct HomeView: View {
                 }
                 
                 Button{
-                    
+                    viewModel.trigger(.didPressOnMoreView)
                 } label: {
                     Text(StringConstants.home_Filter_More)
                         .underline()

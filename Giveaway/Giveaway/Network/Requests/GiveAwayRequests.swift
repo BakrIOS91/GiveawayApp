@@ -18,7 +18,7 @@ struct GiveAwayRequests {
         
         var requestMethod: Moya.Method {return .get}
         
-        var mockResponse: [GiveAwayItem]? { return GiveAwayItem.mockArray(count: 10)}
+        var mockResponse: [GiveAwayItem]? { return GiveAwayItem.mockArray(count: 50)}
         
         var requestTask: RequestTask {
             return .plain
